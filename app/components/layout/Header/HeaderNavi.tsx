@@ -23,7 +23,7 @@ const HeaderNavigation = () => {
             <Link
               key={path}
               href={path}
-              className={`text-base font-medium py-1 border-y border-transparent transition-colors ${
+              className={`text-2xl font-bold py-1 border-y border-transparent transition-colors ${
                 isActive
                   ? "text-orange-500 border-orange-500"
                   : "text-black hover:text-orange-400 hover:border-orange-400"

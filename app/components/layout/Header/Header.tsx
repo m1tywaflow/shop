@@ -8,9 +8,9 @@ import { User } from "@deemlol/next-icons";
 
 const Header = () => {
   return (
-    <header className="relative flex items-center justify-between px-8 py-4 bg-white">
+    <header className="relative flex items-center justify-between p-8 bg-white">
       <div className="flex items-center gap-8">
-        <button className="text-2xl text-black">≡</button>
+        <button className="text-3xl text-black">≡</button>
         <HeaderNavigation />
       </div>
       <Link

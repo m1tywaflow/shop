@@ -10,7 +10,6 @@ type Props = {
 export default function LenisProvider({ children }: Props) {
   useEffect(() => {
     const lenis = new Lenis({
-      smooth: true,
       lerp: 0.08,
       wheelMultiplier: 1,
       touchMultiplier: 1,

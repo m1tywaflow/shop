@@ -1,0 +1,54 @@
+import styled from "styled-components";
+import Link from "next/link";
+
+type ButtonProps = {
+  href: string;
+  children: React.ReactNode;
+};
+
+const Button = ({ href, children }: ButtonProps) => {
+  return (
+    <StyledWrapper>
+      <Link href={href} className="btn">
+        {children}
+      </Link>
+    </StyledWrapper>
+  );
+};
+
+const StyledWrapper = styled.div`
+  .btn {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1a1a1a;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3b3b3b;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    min-height: 3.75em;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .btn:hover {
+    color: #fff;
+    background-color: #1a1a1a;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+
+  .btn:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+`;
+
+export default Button;

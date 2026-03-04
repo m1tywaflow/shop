@@ -2,9 +2,7 @@ import HeroContent from "./HeroContent";
 const HeroSection = () => {
   return (
     <>
-      <section>
-        <HeroContent />
-      </section>
+      <HeroContent />
     </>
   );
 };

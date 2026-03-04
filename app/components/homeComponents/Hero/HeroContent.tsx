@@ -34,7 +34,7 @@ const HeroContent = () => {
         <div className="flex gap-10">
           <div className="bg-gray-100 p-6">
             <Image
-              src="/heroImg/whiteCLothes.png"
+              src="/heroImg/whiteClothes.png"
               alt="Clothes"
               width={420}
               height={520}
@@ -43,7 +43,7 @@ const HeroContent = () => {
           </div>
           <div className="bg-gray-100 p-6">
             <Image
-              src="/heroImg/blackCLothes.png"
+              src="/heroImg/blackClothes.png"
               alt="Clothes"
               width={420}
               height={520}

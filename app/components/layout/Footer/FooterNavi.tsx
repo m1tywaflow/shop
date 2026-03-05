@@ -10,9 +10,9 @@ const navItems: NavigationItem[] = [
 
 const FooterNavi = () => {
   return (
-    <div className="flex flex-col text-lg font-bold">
+    <div className="flex flex-col text-lg font-bold text-black">
       {navItems.map(({ path, label }) => (
-        <Link key={path} href={path}>
+        <Link key={path} href={path} className="hover:opacity-60 transition">
           {label}
         </Link>
       ))}

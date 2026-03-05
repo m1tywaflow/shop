@@ -26,7 +26,7 @@ const ptMono = PT_Mono({
 const InfoContent = () => {
   return (
     <>
-      <section className="max-w-7xl mx-auto pt-30 pb-200 text-black">
+      <section className="max-w-7xl mx-auto pt-20 pb-30 text-black">
         <div className="text-center space-y-8 max-w-4xl mx-auto">
           <h1 className={`${ptMono.className} uppercase text-5xl`}>
             Our Approach to Fashion Design

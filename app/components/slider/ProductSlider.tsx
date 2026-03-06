@@ -46,7 +46,6 @@ export default function ProductSlider() {
                     <p className="text-xs text-neutral-400">
                       {product.subtitle}
                     </p>
-
                     <h3 className="text-sm text-black font-medium">
                       {product.title}
                     </h3>

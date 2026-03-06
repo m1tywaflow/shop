@@ -44,7 +44,7 @@ export default function XivContent() {
           {xivCollection.map((item) => (
             <div
               key={item.id}
-              className="group cursor-pointer w-full max-w-[420px]"
+              className="group cursor-pointer w-full max-w-105"
             >
               <div className="relative bg-neutral-100 p-10 flex items-center justify-center overflow-hidden">
                 <Image

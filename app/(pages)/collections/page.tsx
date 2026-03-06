@@ -1,5 +1,13 @@
+import Assortment from "@/app/components/collectionsComponents/Assortment";
+
 const Collections = () => {
-  return <></>;
+  return (
+    <>
+      <div className="bg-white">
+        <Assortment />
+      </div>
+    </>
+  );
 };
 
 export default Collections;

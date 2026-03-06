@@ -18,6 +18,9 @@ export default function XivContent() {
     <section
       className={`${righteous.className} max-w-375 mx-auto px-8 pt-16 pb-32`}
     >
+      <h1 className="text-black text-5xl">
+        XIV <br /> Collections <br /> 23-24
+      </h1>
       <div className="flex items-center justify-center gap-10 border-b border-neutral-200 mb-14">
         {tabs.map((tab) => (
           <button
@@ -37,13 +40,13 @@ export default function XivContent() {
         ))}
       </div>
       {activeTab === "All" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
           {xivCollection.map((item) => (
             <div
               key={item.id}
-              className="group cursor-pointer w-full max-w-155"
+              className="group cursor-pointer w-full max-w-[420px]"
             >
-              <div className="bg-neutral-100 rounded-3xl p-10 flex items-center justify-center overflow-hidden">
+              <div className="relative bg-neutral-100 p-10 flex items-center justify-center overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -52,17 +55,15 @@ export default function XivContent() {
                   className="object-contain h-90 transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
+              <div className="mt-4 flex justify-between items-start">
+                <div>
+                  <p className="text-xs text-neutral-400">{item.subtitle}</p>
 
-              <div className="mt-5 text-center space-y-1">
-                <p className="text-sm uppercase tracking-wide text-neutral-500 font-semibold">
-                  {item.subtitle}
-                </p>
-
-                <h3 className="text-lg text-black font-medium">{item.title}</h3>
-
-                <p className="text-xl text-black font-semibold">
-                  ${item.price}
-                </p>
+                  <h3 className="text-sm text-black font-medium">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="text-sm text-black font-medium">${item.price}</p>
               </div>
             </div>
           ))}

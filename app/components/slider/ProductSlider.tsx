@@ -31,39 +31,30 @@ export default function ProductSlider() {
         <Slider ref={sliderRef} {...settings}>
           {products.map((product) => (
             <div key={product.id} className="px-3">
-              <div className="group relative border border-black/10 p-5 text-center space-y-4 rounded-xl bg-white hover:shadow-xl transition-all duration-300">
-                {product.oldPrice && (
-                  <span className="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded">
-                    SALE
-                  </span>
-                )}
-                <div className="overflow-hidden">
+              <div className="group cursor-pointer">
+                <div className="bg-neutral-100 p-10 flex items-center justify-center overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.title}
                     width={300}
                     height={400}
-                    className="h-70 object-contain mx-auto transition-transform duration-300 group-hover:scale-110"
+                    className="h-65 object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <p className="text-sm text-gray-500">{product.subtitle}</p>
-                <h3 className="font-semibold text-black text-lg">
-                  {product.title}
-                </h3>
-                <p className="flex justify-center gap-3 items-center text-xl">
-                  <span className="text-green-600 font-semibold">
-                    ${product.price}
-                  </span>
+                <div className="mt-4 flex justify-between items-start">
+                  <div>
+                    <p className="text-xs text-neutral-400">
+                      {product.subtitle}
+                    </p>
 
-                  {product.oldPrice && (
-                    <span className="text-gray-400 text-sm line-through">
-                      ${product.oldPrice}
-                    </span>
-                  )}
-                </p>
-                <button className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-800 cursor-pointer">
-                  Add to cart
-                </button>
+                    <h3 className="text-sm text-black font-medium">
+                      {product.title}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-black font-medium">
+                    ${product.price}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

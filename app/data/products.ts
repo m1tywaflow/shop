@@ -7,6 +7,7 @@ export const products: ProductItem[] = [
     subtitle: "V-Neck T-Shirt",
     price: 99,
     image: "/t-shirts/first.png",
+    oldPrice: 199,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const products: ProductItem[] = [
     subtitle: "Cotton T-Shirt",
     price: 99,
     image: "/t-shirts/second.png",
+    oldPrice: 199,
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ export const products: ProductItem[] = [
     subtitle: "Henley T-Shirt",
     price: 99,
     image: "/t-shirts/third.png",
+    oldPrice: 199,
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ export const products: ProductItem[] = [
     subtitle: "Crewneck T-Shirt",
     price: 99,
     image: "/t-shirts/fourth.png",
+    oldPrice: 199,
   },
   {
     id: 5,
@@ -35,6 +39,7 @@ export const products: ProductItem[] = [
     subtitle: "Crewneck T-Shirt",
     price: 99,
     image: "/t-shirts/second.png",
+    oldPrice: 199,
   },
   {
     id: 6,
@@ -42,5 +47,6 @@ export const products: ProductItem[] = [
     subtitle: "Henley T-Shirt",
     price: 99,
     image: "/t-shirts/third.png",
+    oldPrice: 199,
   },
 ];

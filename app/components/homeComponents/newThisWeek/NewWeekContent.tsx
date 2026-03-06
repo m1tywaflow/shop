@@ -1,5 +1,10 @@
 import ProductSlider from "../../slider/ProductSlider";
+import { Righteous } from "next/font/google";
 
+const righteous = Righteous({
+  subsets: ["latin"],
+  weight: "400",
+});
 const NewWeekSection = () => {
   return (
     <section
@@ -10,7 +15,9 @@ const NewWeekSection = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="flex justify-between items-center mb-12">
+      <div
+        className={`${righteous.className} flex justify-between items-center mb-12`}
+      >
         <h2 className="text-4xl font-bold text-black">
           NEW THIS WEEK <span className="text-blue-600">(50)</span>
         </h2>

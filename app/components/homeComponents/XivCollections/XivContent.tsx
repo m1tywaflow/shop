@@ -2,15 +2,22 @@
 import { useState } from "react";
 import { xivCollection } from "@/app/data/xivCollection";
 import Image from "next/image";
+import { Righteous } from "next/font/google";
 
 const tabs = ["All", "Men", "Women", "KID"] as const;
 type Tab = (typeof tabs)[number];
 
+const righteous = Righteous({
+  subsets: ["latin"],
+  weight: "400",
+});
 export default function XivContent() {
   const [activeTab, setActiveTab] = useState<Tab>("All");
 
   return (
-    <section className="max-w-375 mx-auto px-8 pt-16 pb-32">
+    <section
+      className={`${righteous.className} max-w-375 mx-auto px-8 pt-16 pb-32`}
+    >
       <div className="flex items-center justify-center gap-10 border-b border-neutral-200 mb-14">
         {tabs.map((tab) => (
           <button

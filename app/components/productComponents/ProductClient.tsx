@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { useState } from "react";
 
-type Size = "XS" | "S" | "M" | "L" | "XL" | "2X";
+type Size = "XS" | "S" | "M" | "L" | "XL" | "2XL";
 
-const sizes: Size[] = ["XS", "S", "M", "L", "XL", "2X"];
+const sizes: Size[] = ["XS", "S", "M", "L", "XL", "2XL"];
 
 const colors = [
   "bg-gray-300",
@@ -19,6 +19,7 @@ const colors = [
 export default function ProductClient({ product }: any) {
   const [selectedSize, setSelectedSize] = useState<Size | null>(null);
   const [selectedColor, setSelectedColor] = useState<number | null>(null);
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <section
@@ -31,17 +32,21 @@ export default function ProductClient({ product }: any) {
     >
       <div className="max-w-6xl mx-auto py-24">
         <div className="grid grid-cols-2 gap-20 items-start">
-          <div className="flex justify-center">
-            <Image
-              src={product.image}
-              alt={product.title}
-              width={520}
-              height={520}
-              className="object-contain"
-            />
+          <div className="flex flex-col items-center gap-6">
+            <div className="relative">
+              <span className="absolute top-3 left-3 bg-black text-white text-xs px-2 py-1">
+                NEW
+              </span>
+              <Image
+                src={product.image}
+                alt={product.title}
+                width={460}
+                height={460}
+                className="object-contain"
+              />
+            </div>
           </div>
-
-          <div className="bg-white p-10 border border-gray-200 w-[420px]">
+          <div className="bg-white p-10 border border-gray-200 w-[420px] font-mono">
             <h1 className="text-xl font-semibold tracking-wide">
               {product.title.toUpperCase()}
             </h1>
@@ -50,13 +55,14 @@ export default function ProductClient({ product }: any) {
             <p className="text-sm mt-6 text-gray-700">{product.subtitle}</p>
             <div className="mt-8">
               <p className="text-sm mb-2">Color</p>
+
               <div className="flex gap-2">
                 {colors.map((color, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedColor(index)}
                     className={`
-                      w-6 h-6 border transition
+                      w-6 h-6 border transition cursor-pointer
                       ${color}
                       ${
                         selectedColor === index
@@ -70,13 +76,14 @@ export default function ProductClient({ product }: any) {
             </div>
             <div className="mt-8">
               <p className="text-sm mb-2">Size</p>
+
               <div className="flex flex-wrap gap-2">
                 {sizes.map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
                     className={`
-                      border px-4 py-1 text-sm transition
+                      border px-4 py-1 text-sm transition cursor-pointer
                       ${
                         selectedSize === size
                           ? "bg-black text-white border-black"
@@ -89,12 +96,44 @@ export default function ProductClient({ product }: any) {
                 ))}
               </div>
             </div>
+            <div className="mt-8">
+              <p className="text-sm mb-2">Quantity</p>
+              <div className="flex items-center border w-32 justify-between px-3 py-1">
+                <button
+                  onClick={() => quantity > 1 && setQuantity(quantity - 1)}
+                  className="text-lg"
+                >
+                  -
+                </button>
+                <span>{quantity}</span>
+                <button
+                  onClick={() => setQuantity(quantity + 1)}
+                  className="text-lg"
+                >
+                  +
+                </button>
+              </div>
+            </div>
             <p className="text-xs text-gray-500 mt-6">
               FIND YOUR SIZE | MEASUREMENT GUIDE
             </p>
-            <button className="w-full mt-6 bg-gray-200 py-3 text-sm tracking-widest hover:bg-black hover:text-white transition">
-              ADD
+            <button
+              disabled={!selectedSize}
+              className="w-full cursor-pointer mt-6 bg-gray-200 py-3 text-sm tracking-widest hover:bg-black hover:text-white transition disabled:opacity-40"
+            >
+              ADD TO BAG
             </button>
+            <div className="mt-10 text-sm text-gray-600 space-y-2">
+              <p>✓ Free shipping worldwide</p>
+              <p>✓ 30 day returns</p>
+              <p>✓ Secure payment</p>
+            </div>
+            <div className="mt-10 border-t pt-6 text-sm text-gray-700 space-y-2">
+              <p>• 100% premium cotton</p>
+              <p>• Relaxed fit</p>
+              <p>• Made in Portugal</p>
+              <p>• Machine wash cold</p>
+            </div>
           </div>
         </div>
       </div>

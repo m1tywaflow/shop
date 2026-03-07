@@ -93,12 +93,9 @@ type Props = {
 
 export default async function ProductPage({ params }: Props) {
   const { id } = await params;
-
   const product = collections.find((item) => item.id === Number(id));
-
   if (!product) {
     return <div>Product not found</div>;
   }
-
   return <ProductClient product={product} />;
 }

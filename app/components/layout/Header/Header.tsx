@@ -8,7 +8,14 @@ import { User } from "@deemlol/next-icons";
 
 const Header = () => {
   return (
-    <header className="relative font-mono flex items-center justify-between p-8 bg-white">
+    <header
+      className="relative font-mono flex items-center justify-between p-8 bg-white"
+      style={{
+        backgroundImage: "url('/bg/noisybackground.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="flex items-center gap-8">
         <button className="text-3xl text-black">≡</button>
         <HeaderNavigation />
